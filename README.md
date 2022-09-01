@@ -17,12 +17,19 @@
 This module manages a single Azure Management Group. 
 
 ## USAGE
+
+**IMPORTANT:** We do not pin modules to versions in our examples because of the
+difficulty of keeping the versions in the documentation in sync with the latest released versions.
+We highly recommend that in your code you pin the version to the exact version you are
+using so that your infrastructure remains stable, and update versions in a
+systematic way so that they do not catch you by surprise.
+
 ```hcl
 module "policy_aware_management_group" {
-  source  = "github.com/getindata/terraform-azurerm-subscription"
+  source  = "github.com/getindata/terraform-azurerm-management-group"
 
-  name              = "Test Subscription"
-  subscription_id   = "00000000-0000-0000-0000-000000000000"
+  name                       = "landing-zones"
+  parent_management_group_id = "00000000-0000-0000-0000-000000000000"
 }
 ```
 
@@ -35,7 +42,7 @@ data "azurerm_policy_definition" "matching_rg_location" {
 }
 
 module "policy_aware_management_group" {
-  source  = "github.com/getindata/terraform-azurerm-subscription"
+  source  = "github.com/getindata/terraform-azurerm-management-group"
 
   name = "internal-projects"
   management_group_policies = {
