@@ -7,10 +7,6 @@ resource "azurerm_management_group" "this" {
   : title(replace(module.this.name, "-", " ")))
 
   parent_management_group_id = var.parent_management_group_id
-
-  lifecycle {
-    ignore_changes = [subscription_ids]
-  }
 }
 
 resource "azurerm_management_group_policy_assignment" "this" {
@@ -20,7 +16,8 @@ resource "azurerm_management_group_policy_assignment" "this" {
 
   management_group_id  = local.management_group_id
   policy_definition_id = each.value.policy_definition_id
-  parameters           = jsonencode(each.value.parameters)
+  #If parameters is an empty map, pass null
+  parameters = length(each.value.parameters) == 0 ? null : jsonencode(each.value.parameters)
 }
 
 resource "azurerm_management_group_subscription_association" "this" {
