@@ -4,8 +4,8 @@
 ![Terraform](https://img.shields.io/badge/terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white)
 
 <!--- Replace repository name -->
-![License](https://badgen.net/github/license/terraform-azurerm-management-group/)
-![Release](https://badgen.net/github/release/terraform-azurerm-management-group/)
+![License](https://badgen.net/github/license/getindata/terraform-azurerm-management-group/)
+![Release](https://badgen.net/github/release/getindata/terraform-azurerm-management-group/)
 
 <p align="center">
   <img height="150" src="https://getindata.com/img/logo.svg">
@@ -139,7 +139,7 @@ Apache 2 Licensed. See [LICENSE](LICENSE) for full details.
 ## AUTHORS
 
 <a href="https://github.com/getindata/terraform-azurerm-management-group/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=terraform-azurerm-management-group" />
+  <img src="https://contrib.rocks/image?repo=getindata/terraform-azurerm-management-group" />
 </a>
 
 Made with [contrib.rocks](https://contrib.rocks).
